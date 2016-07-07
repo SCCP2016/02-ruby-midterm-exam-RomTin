@@ -96,14 +96,14 @@ p (fee - 200 * sex)
 
 ```ruby
 
-arr = STDIN.gets.chars
-arr.pop
-puts arr.join("")
-puts arr.size
-puts arr.reverse.join("")
-puts arr.join("").upcase
-puts arr[1,arr.size-2].join("")
-puts arr.inject('') {|ret, n| ret + (('a' <= n && n <= 'c') ? n.upcase : n)}
+arr = STDIN.gets
+arr.chomp!
+puts arr
+puts arr.chars.size
+puts arr.chars.reverse.join
+puts arr.upcase
+puts arr[1,arr.size-2]
+puts arr.chars.map{|n| (('a' <= n && n <= 'c') ? n.upcase : n)}.join
 
 # 入力例
 # ab5?cd
