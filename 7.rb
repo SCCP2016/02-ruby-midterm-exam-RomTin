@@ -10,8 +10,6 @@ def make_dictionary()
 end
 
 dict = make_dictionary()
-input = STDIN.gets
-for ch in input.chars do
-    print dict[ch]
-end
-puts
+input = STDIN.gets.chars
+input.pop
+puts input.inject(''){|ret, n| ret + dict[n]}
