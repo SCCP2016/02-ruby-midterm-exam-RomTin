@@ -276,21 +276,8 @@ def is_upper?(ch)
     ('a'.ord <= ch.ord && ch.ord <= 'z'.ord) ? false : true
 end
 
-def get_f(name)
-    o_name = name.chars
-    while true do
-        a = o_name.pop
-        if a != nil then
-            if is_upper?(a) then
-                break
-            end
-        end
-    end
-    return o_name.join
-end
-
-def get_l(name)
-    ret  = []
+def split_name(name)
+    ret = []
     o_name = name.chars
     while true do
         a = o_name.pop
@@ -302,12 +289,11 @@ def get_l(name)
         end
         ret.push(a)
     end
-    return ret.reverse.join
+    return [o_name.join, ret.reverse.join]
 end
 
 for i in 0..n-1 do
-    puts get_f(male[i]) + get_l(female[i])
+    puts split_name(male[i])[0] + split_name(female[i])[1]
 end
 
 ```
-
